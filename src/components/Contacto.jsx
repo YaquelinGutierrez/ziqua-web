@@ -20,16 +20,23 @@ const infoCards = [
   {
     icon: '📧',
     title: 'Correo',
-    desc: 'contacto@ziqua.mx',
-    sub: 'Respondemos en menos de 24h',
+    desc: 'equipo@zyqua.site',
+    sub: 'Escríbenos para solicitar información',
     color: '#0891b2',
   },
   {
     icon: '📱',
     title: 'Teléfono',
-    desc: '+52 755 000 0000',
-    sub: 'Lunes a viernes 9am - 6pm',
+    desc: '755 129 5824',
+    sub: 'También disponible por WhatsApp',
     color: '#0d9488',
+  },
+  {
+    icon: '📸',
+    title: 'Instagram',
+    desc: '@zyqua.com',
+    sub: 'Síguenos en Instagram',
+    color: '#be185d',
   },
 ]
 
@@ -135,6 +142,24 @@ export default function Contacto() {
                 </div>
               </motion.div>
             ))}
+
+            <motion.a
+              href="https://wa.me/527551295824?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20ZYQUA."
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ y: -3, scale: 1.01 }}
+              whileTap={{ scale: 0.98 }}
+              className="w-full rounded-2xl p-4 flex items-center justify-center gap-3 font-black text-white text-sm"
+              style={{
+                background: '#16a34a',
+                boxShadow: '0 8px 24px rgba(22,163,74,0.20)',
+                textDecoration: 'none',
+              }}
+              aria-label="Contactar a ZYQUA por WhatsApp"
+            >
+              <span className="text-xl" aria-hidden="true">💬</span>
+              Contactar por WhatsApp
+            </motion.a>
 
             {/* Banner demo */}
             <motion.div
