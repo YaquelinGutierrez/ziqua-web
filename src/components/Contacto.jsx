@@ -21,6 +21,7 @@ const infoCards = [
     icon: '📧',
     title: 'Correo',
     desc: 'equipo@zyqua.site',
+    href: 'mailto:equipo@zyqua.site',
     sub: 'Escríbenos para solicitar información',
     color: '#0891b2',
   },
@@ -28,6 +29,7 @@ const infoCards = [
     icon: '📱',
     title: 'Teléfono',
     desc: '755 129 5824',
+    href: 'tel:+527551295824',
     sub: 'También disponible por WhatsApp',
     color: '#0d9488',
   },
@@ -35,6 +37,7 @@ const infoCards = [
     icon: '📸',
     title: 'Instagram',
     desc: '@zyqua.com',
+    href: 'https://www.instagram.com/zyqua.com/',
     sub: 'Síguenos en Instagram',
     color: '#be185d',
   },
@@ -133,9 +136,21 @@ export default function Contacto() {
                   <p className="text-xs font-bold mb-0.5" style={{ color: card.color }}>
                     {card.title}
                   </p>
-                  <p className="text-sm font-bold" style={{ color: '#042C53' }}>
-                    {card.desc}
-                  </p>
+                  {card.href ? (
+                    <a
+                      href={card.href}
+                      target={card.href.startsWith('https://') ? '_blank' : undefined}
+                      rel={card.href.startsWith('https://') ? 'noopener noreferrer' : undefined}
+                      className="text-sm font-bold hover:underline"
+                      style={{ color: '#042C53', textDecoration: 'none' }}
+                    >
+                      {card.desc}
+                    </a>
+                  ) : (
+                    <p className="text-sm font-bold" style={{ color: '#042C53' }}>
+                      {card.desc}
+                    </p>
+                  )}
                   <p className="text-xs mt-0.5" style={{ color: '#8a9bb0' }}>
                     {card.sub}
                   </p>
